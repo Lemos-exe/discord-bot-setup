@@ -5,10 +5,16 @@ Projeto base para bots com `discord.py`.
 ## Setup
 
 1. Cria e ativa o ambiente virtual:
-
+   
+Linux
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
+```
+Windows
+```
+python -m venv -venv
+.venv\Scripts\activate.bat
 ```
 
 2. Instala as dependências:
