@@ -7,7 +7,7 @@ Projeto base para bots com `discord.py`.
 1. Cria e ativa o ambiente virtual:
 
 ```bash
-/usr/local/bin/python3 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 ```
 
