@@ -20,7 +20,7 @@ pip install -r requirements.txt
 3. Define o token do bot:
 
 ```python
-bot.run("o_teu_token_aqui")
+export DISCORD_TOKEN="o_teu_token_aqui"
 ```
 
 4. Executa o bot:
@@ -31,9 +31,18 @@ python bot.py
 
 ## Estrutura
 
-- `bot.py`: código principal do bot.
+- `bot.py`: ponto de entrada.
+- `bot_app/config.py`: configurações e constantes.
+- `bot_app/storage.py`: persistência do saldo em JSON.
+- `bot_app/cogs/`: comandos separados por domínio.
 - `requirements.txt`: dependências do projeto.
 - `.venv/`: ambiente virtual local.
+
+## Variáveis de ambiente
+
+- `DISCORD_TOKEN`: token do bot.
+- `DOJOCOINS_DB_FILE`: ficheiro JSON para os saldos. Padrão: `banco_dojocoins.json`.
+- `DOJOCOINS_ROLE_NAME`: nome do cargo de prémio do casino. Padrão: `VIP DojoCoins`.
 
 ## Observações
 

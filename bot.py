@@ -1,22 +1,13 @@
-import discord
-from discord.ext import commands
+from bot_app.config import DB_PATH, get_token
+from bot_app.core import DojoBot
+from bot_app.storage import DojoCoinStore
 
-intents = discord.Intents.default()
-intents.message_content = True
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+def main() -> None:
+    store = DojoCoinStore(DB_PATH)
+    bot = DojoBot(store)
+    bot.run(get_token())
 
-@bot.event
-async def on_ready():
-    print(f"Bot ligado como {bot.user}")
 
-@bot.command()
-async def ola(ctx):
-    await ctx.send("Olá!")
-
-token=(token_aqui)
-
-if not token:
-    raise RuntimeError("DISCORD_TOKEN nao definido no ambiente")
-
-bot.run(token)
+if __name__ == "__main__":
+    main()
